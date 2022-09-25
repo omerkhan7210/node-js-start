@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Inter:wght@400;700&display=swap");
+
+:root{
+    --fs_btn:1em;
+    --primary:firebrick;
+    --primary_hover: rgb(153, 24, 24);
+    --secondary: green;
+    --secondary_hover : rgb(10, 95, 10);
+    --btn-padding:0.5rem 2rem;
+    --fontf: "Exo 2", sans-serif;
+    --boxs_color: rgb(182, 182, 182);
+}
+
+*{
+    font-family:var(--fontf) ;
+}
+
+body {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding-inline:3rem;
+    margin-block: 2rem;
+    gap:2rem;
+    background-color: rgb(243, 243, 243);
+    padding:2rem;
+    transition: background-color 0.5s ease-in-out;
+}
+
+
+.black-theme{
+    background-color: black;
+    color:white;
+}
+
+h1{
+    font-size:3em;
+    color:var(--primary);
+    margin-block:0px;
+}
+
+button{
+    border:none;
+    color:white;
+    padding: var(--btn-padding);
+    cursor: pointer;
+    font-family: var(--fontf);
+}
+button:focus{
+    outline: none;
+}
+
+.form-container,.list-container{
+    width: 100%;
+}
+
+form{
+    display: flex;
+}
+
+input{
+    padding:0.8rem;
+    width:100%;
+    border: 2px solid var(--secondary);
+    border-radius: 0;
+}
+
+input::placeholder{
+    font-size:1rem;
+    color:var(--secondary);
+    font-family: var(--fontf);
+}
+
+input:focus{
+    outline:none;
+    border-radius: 0;
+    z-index: 10;
+}
+
+form button{
+    background-color: var(--secondary);
+    font-size: var(--fs);
+    position: relative;
+    z-index: 1;
+}
+
+form button img{
+    width: 30px;
+}
+
+form button::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: left;
+    background-size: 300%;
+    background: linear-gradient(45deg, rgba(0,100,0,1) 0%, rgba(7,172,7,1) 100%);
+    z-index: -1;
+    animation: anim 10ms ease-in-out alternate infinite;
+}
+
+
+@keyframes anim {
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
+}
+
+.list-container{
+    padding-inline: 1rem;
+}
+
+.list-container ul{
+    padding:0;
+    list-style-type: none;
+    width:100%;
+}
+
+.list-container ul li{
+    display: flex;
+    justify-content: space-between;
+    padding:1rem;
+    border-bottom: 1px solid var(--primary);
+}
+
+.list-container ul li span{
+    font-size: var(--fs_btn);
+    font-family: var(--fontf);
+}
+
+.list-container ul li button{
+    background: linear-gradient(45deg, rgba(100,0,0,1) 0%, rgba(212,43,43,1) 100%);
+    font-size: var(--fs_btn);
+    transition: box-shadow 0.3s ease-in;
+}
+
+.list-container ul li button:hover{
+    box-shadow:1px 2px 4px var(--primary_hover);
+}
+
+
+.text-container{
+    display:none;
+}
+
+.text-container p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:var(--secondary);
+}
+
+.text-container p i{
+    margin-right:10px;
+}
+
+.check-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    padding:0.5rem 3rem;
+    width:70%;
+}
+.check-container label,span{
+    font-size:20px;
+    width: auto;
+}
+
+.check-container input[type="checkbox"]{
+    margin-left:0;
+    width:25px;
+    height: 25px;
+    border-radius: 50%;
+    border:1px solid var(--secondary);
+}

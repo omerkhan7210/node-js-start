@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+
+    <%- include('./partials/header.ejs')%>
+
+    <div class="container">
+       
+       
+        <div class="list-container">
+          
+            <center>
+                <h1>DETAILS</h1>  
+                <br>      
+                <h1><%= lists.name %></h1> 
+                <br>
+                <ul style="width: 100%;">
+                    <li style="justify-content: center;">
+                    
+                        <button class="del" data-doc="<%= lists._id %>">Delete</button>
+                     
+                    </li>
+                </ul>
+            </center>
+            
+        </div>       
+        
+    </div>
+
+    <%- include('./partials/footer.ejs')%>
+    <script>
+        const dltBtn = document.querySelector(".del");
+        dltBtn.addEventListener("click",(e)=>{
+            const endPoint = `./app/${dltBtn.dataset.doc}`;
+            fetch((endPoint),{
+                method:"DELETE"
+            })
+            .then((res)=> res.json() )
+            .then((data) => window.location.href = data)
+            .catch((err) => console.log(err));
+        });
+
+
+    </script>
+</body>
+</html>

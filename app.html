@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MY APP</h1>
+        <div class="check-container">
+            <label for="hide">Switch Theme</label>
+            <span>Dark</span>
+            <input type="checkbox" name="hide">
+        </div>
+        <div class="form-container">
+            <form action="">
+                <input type="text" placeholder="Search List Item">
+                <button><img src="img/search.svg" alt="Search"></button>
+            </form>
+        </div>
+        <div class="text-container">
+            <p>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                List Item addedd successully!
+            </p>
+        </div>
+        <div class="list-container">
+            <ul>
+                <li>
+                    <span>Wind</span>
+                    <button>delete</button>
+                </li>
+                
+                <li>
+                    <span>Water</span>
+                    <button>delete</button>
+                </li>
+                <li>
+                    <span>Fire</span>
+                    <button>delete</button>
+                </li>
+                <li>
+                    <span>Rock</span>
+                    <button>delete</button>
+                </li>
+            </ul>
+        </div>       
+        <div class="form-container">
+            <form action="" id="add_form">
+                <input type="text" placeholder="Add Item">
+                <button><img src="img/add.svg" alt="Add"></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
